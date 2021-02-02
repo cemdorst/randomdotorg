@@ -32,20 +32,20 @@ func RollDice(n string, s string) []int {
 		bytes.NewReader(req))
 
 	if err != nil {
-		fmt.Printf("Erro:%v", err.Error())
+		fmt.Printf("Error:%v", err.Error())
 	}
 
 	respBytes, err := ioutil.ReadAll(httpRes.Body)
 
 	if err != nil {
-		fmt.Printf("Erro:%v", err.Error())
+		fmt.Printf("Error:%v", err.Error())
 	}
 
 	var diceRoll model.Dice
 
 	err = json.Unmarshal(respBytes, &diceRoll)
 	if err != nil {
-		fmt.Printf("Erro:%v", err.Error())
+		fmt.Printf("Error:%v", err.Error())
 	}
 
 	return diceRoll.Result.Random.Data
