@@ -1,9 +1,18 @@
 package randomdotorg
 
-import "testing"
+import (
+	"os"
+	"strings"
+	"testing"
+)
 
 func Init() {
-	APIKey = ""
+	envmap := make(map[string]string)
+	for _, value := range os.Environ() {
+		splits := strings.Split(value, "=")
+		envmap[splits[0]] = splits[1]
+	}
+	APIKey = envmap["RANDOMAPI"]
 }
 
 func TestRollDice(t *testing.T) {
