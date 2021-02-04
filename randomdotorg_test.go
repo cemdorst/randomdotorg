@@ -12,7 +12,7 @@ func Init() {
 		splits := strings.Split(value, "=")
 		envmap[splits[0]] = splits[1]
 	}
-	APIKey = envmap["RANDOMAPI"]
+	APIKey = envmap["RANDOMAPIKEY"]
 }
 
 func TestRollDice(t *testing.T) {
