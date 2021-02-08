@@ -33,7 +33,7 @@ var ErrHTTP = errors.New("HTTP related error")
 
 //RollDice will throw (n) dice with (s) sides
 func RollDice(n string, s string) (result []int) {
-	if s < minsides {
+	if s == minsides {
 		fmt.Println(ErrDiceSides)
 		return result
 	}
