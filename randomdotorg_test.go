@@ -7,12 +7,7 @@ import (
 )
 
 func Init() {
-	envmap := make(map[string]string)
-	for _, value := range os.Environ() {
-		splits := strings.Split(value, "=")
-		envmap[splits[0]] = splits[1]
-	}
-	APIKey = envmap["RANDOMAPIKEY"]
+	APIKey = os.Getenv("RANDOMDOTORG_APIKEY")
 }
 
 func TestRollDice(t *testing.T) {
