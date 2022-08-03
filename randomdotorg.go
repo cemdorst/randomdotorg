@@ -6,6 +6,7 @@ import (
 	"errors"
 	"fmt"
 	"io/ioutil"
+	"os"
 	"net/http"
 
 	jsonrpc2 "github.com/AdamSLevy/jsonrpc2/v14"
@@ -13,7 +14,7 @@ import (
 )
 
 //APIKey to access api.random.org
-var APIKey string
+var APIKey string = os.Getenv("RANDOMDOTORG_APIKEY")
 
 //API base URL
 const apiurl string = "https://api.random.org/json-rpc/2/invoke"

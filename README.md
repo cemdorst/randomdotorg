@@ -12,9 +12,10 @@ import (
 	"github.com/cemdorst/randomdotorg"
 )
 
-func main() {
+//RANDOMDOTORG_APIKEY env var must be set:
+//export RANDOMDOTORG_APIKEY="xxxx-xxxx-xxxx-xxxx-xxxx"
 
-	randomdotorg.APIKey = "xxxx-xxxx-xxxx-xxxx-xxxx"
+func main() {
 
   //Roll 5 D10 dice
 	d := randomdotorg.RollDice("5", "10")
